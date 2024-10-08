@@ -15,7 +15,6 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //En clase
         if (transform.position.y > vertical)
         {
             transform.position = new Vector3(transform.position.x, vertical, transform.position.z);
@@ -25,7 +24,6 @@ public class Teleporter : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, -vertical, transform.position.z);
         }
-        //En casa
         if (transform.position.x > horizontal)
         {
             transform.position = new Vector3(horizontal, transform.position.y, transform.position.z);
