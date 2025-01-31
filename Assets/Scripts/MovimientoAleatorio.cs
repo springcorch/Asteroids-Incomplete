@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class MovimientoAleatorio : MonoBehaviour
@@ -11,15 +10,15 @@ public class MovimientoAleatorio : MonoBehaviour
 
     void Start()
     {
-        //EJ2. movimiento aleatorio:
-        float random = Random.Range(fuerzaMax, fuerzaMin);
-        float rotation = Random.Range(0f, 180f);
-
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(random, random));
 
-        //EJ3. rotación aleatoria
-        transform.eulerAngles = transform.eulerAngles + new Vector3(0, 0, -random * rotation);
+        // 1.1 Movimiento Asteroides
+        float randomForce = Random.Range(fuerzaMin, fuerzaMax);
+        Vector2 forceDirection = Random.insideUnitCircle.normalized * randomForce;
+        rb.AddForce(forceDirection);
 
+        // 1.2 Rotación Asteroides
+        float randomRotation = Random.Range(0f, 360f);
+        transform.eulerAngles = new Vector3(0, 0, randomRotation);
     }
 }

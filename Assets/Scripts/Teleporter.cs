@@ -15,7 +15,7 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //EJ1. Teletransporte
+        // 1.1 Teletransporte
         if (transform.position.y > vertical)
         {
             transform.position = new Vector3(transform.position.x, -vertical, transform.position.z);
